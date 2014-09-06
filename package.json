@@ -1,0 +1,23 @@
+{
+  "name": "aspod-blog",
+  "version": "0.0.0",
+  "description": "a blog only as-pod memeber understands :)",
+  "main": "server.js",
+   "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "dependencies": {
+    "pg": "2.x",
+    "express": "~3.4.x",
+    "body-parser" : "~1.4.3",
+    "method-override" : "~2.1.1"
+  },
+  "author": "gang.li@turn.com",
+  "license": "MIT"
+}
