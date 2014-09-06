@@ -1,0 +1,23 @@
+{
+  "name": "aspod-blog",
+  "version": "0.0.0",
+  "authors": [
+    "Gang Li <gang.li@turn.com>"
+  ],
+  "description": "blog for as-pod",
+  "license": "private",
+  "homepage": "aspod-blog.herokuapp.com",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.23",
+    "impress": "https://github.com/bartaz/impress.js.git#^0.5.x",
+    "unicorn": "ssh://git@stash.turn.com:7999/cnsl/unicorn.git#~0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
