@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "a blog only as-pod memeber understands :)",
   "main": "server.js",
-   "scripts": {
+  "scripts": {
     "start": "node server.js"
   },
   "engines": {
@@ -13,11 +13,19 @@
     "type": "git"
   },
   "dependencies": {
-    "pg": "2.x",
+    "body-parser": "~1.4.3",
+    "coffee-script": "^1.8.0",
     "express": "~3.4.x",
-    "body-parser" : "~1.4.3",
-    "method-override" : "~2.1.1"
+    "lodash": "^2.4.1",
+    "method-override": "~2.1.1",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "pg": "2.x",
+    "sequelize": "^1.7.10"
   },
   "author": "gang.li@turn.com",
+  "contributor": [
+    "Norman Xin <norman.xin@turn.com>"
+  ],
   "license": "MIT"
 }
