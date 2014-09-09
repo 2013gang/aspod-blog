@@ -2,9 +2,9 @@
   "name": "aspod-blog",
   "version": "0.0.0",
   "description": "a blog only as-pod memeber understands :)",
-  "main": "server.js",
+  "main": "server.coffee",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.coffee"
   },
   "engines": {
     "node": "0.10.x"

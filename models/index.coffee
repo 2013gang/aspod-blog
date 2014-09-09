@@ -1,7 +1,7 @@
 fs = require 'fs'
 path = require 'path'
 Sequelize = require 'sequelize'
-sequelize = new Sequelize 'aspod-blog-db', 'nxin', null,
+sequelize = new Sequelize 'mylocaldb', 'gli', null,
   dialect: 'postgres',
   port: 5432
 _ = require 'lodash'
