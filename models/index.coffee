@@ -1,9 +1,20 @@
 fs = require 'fs'
 path = require 'path'
 Sequelize = require 'sequelize'
-sequelize = new Sequelize 'mylocaldb', 'gli', null,
+
+if process.env.DATABASE_URL
+	 match = process.env.DATABASE_URL.match /postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/
+	 console.log match
+	 sequelize = new Sequelize match[5], match[1], match[2], 
+	 dialect: 'postgres',
+	 protocal: 'postgres',
+	 port: match[4],
+	 host: match[3]
+
+	else sequelize = new Sequelize 'mylocaldb', 'gli', null,
   dialect: 'postgres',
   port: 5432
+
 _ = require 'lodash'
 db = {}
 
