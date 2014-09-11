@@ -12,14 +12,5 @@
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
-  },
-  "production": {
-    "username": "stpjxzmqzirfsq",
-    "password": "FUN1UyeWGGg_2pAaRKw55zx-ti",
-    "database": "d6fstgh4rs7pa2",
-    "host": "ec2-54-204-47-70.compute-1.amazonaws.com",
-    "port": 5432,
-    "protocal": "postgres",
-    "dialect": "postgres"
   }
 }
