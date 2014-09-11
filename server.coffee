@@ -17,6 +17,7 @@ app.use methodOverride 'X-HTTP-Method-Override' # override with the X-HTTP-Metho
 (require './app/routes.coffee') app
 
 if process.env.DB_SYNC == 'TRUE'
+	console.info 'force syncing db!'
 	db.sequelize
 	.sync force: true
 	.complete (err) ->
