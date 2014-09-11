@@ -16,11 +16,12 @@ app.use methodOverride 'X-HTTP-Method-Override' # override with the X-HTTP-Metho
 # routes ======================================================================
 (require './app/routes.coffee') app
 
-
-db.sequelize
-.sync force: process.env.DB_SYNC == 'TRUE'
-.complete (err) ->
-  if err? then throw err[0]
-  else
-    app.listen port
-    console.log "Express server listening on port #{port}"
+if process.env.DB_SYNC == 'TRUE'
+	db.sequelize
+	.sync force: true
+	.complete (err) ->
+	  if err? then throw err[0]
+	  else
+	    app.listen port
+	    console.log "Express server listening on port #{port}"
+else app.listen port; console.log "Express server listening on port #{port}"
