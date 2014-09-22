@@ -22,7 +22,8 @@
     "passport-local": "^1.0.0",
     "pg": "2.x",
     "sequelize": "^1.7.10",
-    "sequelize-cli": "^0.2.5"
+    "sequelize-cli": "^0.2.5",
+    "swig": "^1.4.2"
   },
   "author": "gang.li@turn.com",
   "contributor": [

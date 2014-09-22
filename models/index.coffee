@@ -8,14 +8,14 @@ createSequelizeInstance = (env) ->
 		when 'development'
 			dbConfig = (require '../config/config.json').development
 
-			sequelize = new Sequelize dbConfig.database, dbConfig.username, dbConfig.password,
+			new Sequelize dbConfig.database, dbConfig.username, dbConfig.password,
 				dialect: dbConfig.dialect,
 				port: dbConfig.port
 
 		when 'production'
 			if process.env.DATABASE_URL
 				match = process.env.DATABASE_URL.match /postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/
-				sequelize = new Sequelize match[5], match[1], match[2],
+				new Sequelize match[5], match[1], match[2],
 					dialect: 'postgres',
 					protocal: 'postgres',
 					port: match[4],
