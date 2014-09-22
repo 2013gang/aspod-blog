@@ -2,27 +2,31 @@ express = require 'express'
 bodyParser = require 'body-parser'
 methodOverride = require 'method-override'
 db = require './models'
-
+env = process.env.NODE_ENV || 'development'
 port = process.env.PORT || 5000 # set the port
 
 app = do express # create our app w/ express
 
-app.use express.static "#{__dirname}/public" # set the static files location /public/img will be /img for users
-app.use bodyParser.urlencoded 'extended':'true' # parse application/x-www-form-urlencoded
-app.use do bodyParser.json # parse application/json
-app.use bodyParser.json type: 'application/vnd.api+json' # parse application/vnd.api+json as json
-app.use methodOverride 'X-HTTP-Method-Override' # override with the X-HTTP-Method-Override header in the request
+# set the static files location /public/img will be /img for users
+app.use express.static "#{__dirname}/public"
+# parse application/x-www-form-urlencoded
+app.use bodyParser.urlencoded 'extended':'true'
+# parse application/json
+app.use do bodyParser.json
+# parse application/vnd.api+json as json
+app.use bodyParser.json type: 'application/vnd.api+json'
+# override with the X-HTTP-Method-Override header in the request
+app.use methodOverride 'X-HTTP-Method-Override'
 
 # routes ======================================================================
-(require './app/routes.coffee') app
+(require './routes.coffee') app
 
-if process.env.DB_SYNC == 'TRUE'
-	console.info 'force syncing db!'
-	db.sequelize
-	.sync force: true
-	.complete (err) ->
-	  if err? then throw err[0]
-	  else
-	    app.listen port
-	    console.log "Express server listening on port #{port}"
-else app.listen port; console.log "Express server listening on port #{port}"
+switch env
+	when 'development'
+		db.sequelize
+		.sync force: true
+		.complete (err) ->
+			if err? then throw err[0]
+
+app.listen port
+console.log "Express server listening on port #{port} in #{env}"

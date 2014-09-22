@@ -1,7 +1,8 @@
 {
   "development": {
-    "username": "gli",
-    "database": "mylocaldb",
+    "username": "nxin",
+    "password": null,
+    "database": "aspod-blog-db",
     "protocal": "postgres",
     "dialect": "postgres",
     "coffee": true
@@ -14,5 +15,6 @@
     "dialect": "postgres"
   },
   "production": {
+
   }
 }
